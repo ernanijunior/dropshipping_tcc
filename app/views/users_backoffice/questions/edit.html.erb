@@ -1,0 +1,72 @@
+
+<div class="row">
+          <% if @questions.errors.any? %>
+                <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                  <ul>
+                     <% @questions.errors.full_messages.each do |message| %>
+                    <li>         <% message %>           </li>
+                    <% end %>
+                    </ul>
+                  </div>
+            <% end %>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Editando Atendimento</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                  
+                     <%= form_with(model: [ :admins_backoffice, @questions  ]) do |form| %>
+
+
+                       <div class="form-group">
+                                <%= form.label :subject_id %>
+                                <%= form.collection_select(:subject_id, Subject.all, :id, :description, {}, { class:"form-control" }) %>
+                                
+                            </div>
+
+                      <div class="form-group">
+                        <%= form.label :Assunto %>
+                        <%= form.text_area :question,  class:"form-control", placeholder:"Email do Administrador" %>
+                       </div>
+
+                       <div class="form-group">
+                        <%= form.label :Resposta %>
+                        <%= form.text_area :response, class:"form-control", placeholder:"Email do Administrador" %>
+                       </div>
+
+                        <div class="form-group">
+                        <%= form.label :Data_Cadastro %>
+                        <%= form.text_field :date_question,:readonly => true, class:"form-control", placeholder:"Email do Administrador" %>
+                       </div>
+
+                        <div class="form-group">
+                        <%= form.label :Data_Resposta %>
+                        <%= form.text_field :date_response, class:"form-control", placeholder:"Email do Administrador" %>
+                       </div>
+                        
+                  
+ 
+                 <button type="submit" class="btn btn-success">Salvar</button>
+
+                   <% end %> 
+    

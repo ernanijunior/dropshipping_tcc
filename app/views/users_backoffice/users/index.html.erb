@@ -1,0 +1,53 @@
+
+   <div class="x_content">
+
+                    <table class="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Email</th>
+                        <th>Nome</th></td>
+                        <th>Sobre_Nome</th></td>
+                        <th>Rua</th></td>
+                        <th>Cidade</th></td>
+                        <th>CEP</th></td>
+                        <th>Editar</th></td>
+                        <th>Excluir</th></td>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                      <% @users.each do |user| %>
+                          <td><%= user.id %></td>
+                          <td><%= user.email %></td>
+                          <td><%= user.name_user %></td>
+                          <td><%= user.last_name_user %></td>
+                          <td><%= user.street_user %></td>
+                          <td><%= user.city_user %></td>
+                          <td><%= user.zip_code_user %></td>
+
+                           <td >
+                            <%= link_to edit_users_backoffice_user_path(user), class:"btn btn-primary btn-circle" do %>
+                            <i class="fa fa-edit"></i>
+                            <% end %>
+                          </td>
+
+                          <td>
+                           <%= link_to users_backoffice_user_path(user), method: :delete, class:"btn btn-danger btn-circle", data: { confirm: "Deseja realmente excluir esse usuário?" }  do %>
+                            <i class="fa fa-minus"></i>
+                            <% end %>
+                          </td>
+
+                      </tr> 
+                    <% end %>  
+
+                </tbody>
+             </table>
+ 
+ <div class="text-center">
+ <%= paginate @users %>
+ <p><%= link_to 'Efetuar logoff…[Usuários]', destroy_user_session_path, method: :delete %></p>
+ </div>
+
+
+ 

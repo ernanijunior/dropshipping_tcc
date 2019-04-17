@@ -1,0 +1,37 @@
+
+   <div class="x_content">
+
+                    <table class="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Assunto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <% @subjects.each do |subject| %>
+                          <td><%= subject.id %></td>
+                          <td><%= subject.description %></td>
+
+                          <td >
+                            <%= link_to edit_admins_backoffice_subject_path(subject), class:"btn btn-primary btn-circle" do %>
+                            <i class="fa fa-edit"></i>
+                            <% end %>
+                          </td>
+
+                          <td>
+                            <%= link_to admins_backoffice_subject_path(subject), method: :delete, class:"btn btn-danger btn-circle", data: { confirm: "Deseja realmente excluir esse administrador?" }  do %>
+                            <i class="fa fa-minus"></i>
+                            <% end %>
+                          </td>
+
+                      </tr> 
+                    <% end %>  
+
+                </tbody>
+             </table>
+ 
+ <div class="text-center">
+
+
+ 

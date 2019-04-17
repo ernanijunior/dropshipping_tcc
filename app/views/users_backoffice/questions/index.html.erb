@@ -1,0 +1,52 @@
+   <div class="x_content">
+
+                    <table class="table">
+                      <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Tipo Assunto</th>
+                        <th>Assunto</th>
+                        <th>Resposta</th>
+                        <th>Data Assunto</th>
+                        <th>Data Resposta</th>
+                         <th>Novo
+                            <%= link_to new_users_backoffice_question_path(@questions),class:"btn btn-success btn-circle" do %>
+                            <i class="fas fa-check"></i>
+                            <% end %>
+                          </th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <% @questions.each do |question| %>
+                          <td><%= question.id %></td>
+                          <td><%= question.subject.description.truncate(30)%></td>
+                          <td><%= question.question %></td>
+                          <td><%= question.response %></td>
+                          <td><%= question.date_question %></td>
+                          <td><%= question.date_response %></td>
+                          <td >
+                            <%= link_to edit_users_backoffice_question_path(question), class:"btn btn-primary btn-circle" do %>
+                            <i class="fa fa-edit"></i>
+                            <% end %>
+                          </td>
+
+                          <td>
+                            <%= link_to users_backoffice_question_path(question), method: :delete, class:"btn btn-danger btn-circle", data: { confirm: "Deseja realmente excluir esse esse assunto?" }  do %>
+                            <i class="fa fa-minus"></i>
+                            <% end %>
+                          </td>
+
+                      </tr> 
+                    <% end %>  
+
+                </tbody>
+             </table>
+
+ <div class="text-center">
+ <%= paginate @questions %>
+
+ </div>
+
+ 
+
+ 

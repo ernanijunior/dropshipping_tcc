@@ -1,0 +1,2 @@
+class TypeService < ApplicationRecord
+end
