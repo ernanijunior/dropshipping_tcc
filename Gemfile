@@ -26,6 +26,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 gem 'rails-ujs', '~> 0.1.0'
 
+gem 'rest-client'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

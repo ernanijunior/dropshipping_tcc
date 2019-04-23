@@ -1,0 +1,143 @@
+<html lang="en">
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link href="templates/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="templates/gentelella/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="templates/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="templates/gentelella/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+
+
+  <body class="nav-md">
+   
+
+            <div class="clearfix"></div>
+
+            <!-- /menu profile quick info -->
+
+            <br />
+
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Produtos</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel" style="height:600px;">
+                  <div class="x_title">
+                    <h2>Produtos disponíveis</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+                    <div class="row">
+
+                      <div class="col-md-12">
+ <%@stocks.each do |u|%>
+                        <!-- price element -->
+                        <div class="col-md-3 col-sm-2 col-xs-8">
+                          <div class="pricing">
+                            <div class="title">
+                              <h2>  <%=u[:description]%> </h2>
+                              <h1> <%=u[:price]%></h1>
+                            </div>
+                            <div class="x_content">
+                              <div class="">
+                                <div class="pricing_features">
+                                  <ul class="list-unstyled text-left">
+                                    <li><i class="fa fa-check text-success"></i> <strong>Fornecedor: <%=u[:provider]%></strong></li>
+                                   
+                                    <li><i class="fa fa-check text-success"></i> <strong>Descrição: <%=u[:description]%></strong></li>
+                                    <li><i class="fa fa-check text-success"></i> <strong>Quantidade em Estoque: <%=u[:amount]%></strong></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="pricing_footer">
+                                <a href="javascript:void(0);" class="btn btn-success btn-block" role="button">Compre <span> agora!</span></a>
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+               
+        <% end %>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+
+
+    <script src="templates/gentelella/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="templates/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="templates/gentelella/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="templates/gentelella/vendors/nprogress/nprogress.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="templates/gentelella/build/js/custom.min.js"></script>
+  </body>
+</html>
